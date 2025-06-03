@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    repo: https://github.com/jacobf431/n8n
+    branch: master
+    plan: free
+    dockerCommand: >
+      n8n start
+    envVars:
+      - key: N8N_BASIC_AUTH_USER
+        value: jacobf431
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: Wildcats@2005
+      - key: WEBHOOK_TUNNEL_URL
+        value: https://n8n.onrender.com
+      - key: N8N_HOST
+        value: 0.0.0.0
+      - key: N8N_PORT
+        value: 5678
+      - key: N8N_PROTOCOL
+        value: https
